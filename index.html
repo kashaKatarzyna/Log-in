@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Log In</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Enter Your phone number followed by the country code</h1>
+        <h3>ex: +972 55 555 5555</h3>
+    </header>
 
-    <form>
+    <main>
+        <form id="login">
+            <label for="userName">Name</label>
+            <input id="userName" type="text" pattern="/[A-Z]/i" required>
 
-        <label for="name">Name</label>
-        <input id="name" type="text" required>
+            <label for="userNumber">Number</label>
+            <input id="userNumber" type="number" pattern="/[+0-9]/g" required>
 
-        <label for="number">Number</label>
-        <input id="number" type="number" required>
-    </form>
+            <select name="countries" id="countries"></select>
+
+            <input type="button" value="Get Code" onclick="validationForm()">
+        </form>
+    </main>
     
+
+
+<script src="js/main.js"></script>  
 </body>
 </html>
