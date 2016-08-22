@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload = "login.reset()">
     <header>
         <h1>Enter Your phone number followed by the country code</h1>
         <h3>ex: +972 55 555 5555</h3>
@@ -18,7 +18,7 @@
             <input id="userName" type="text" pattern="/[A-Z]/i" required>
 
             <label for="userNumber">Number</label>
-            <input id="userNumber" type="number" pattern="/[+0-9]/g" required>
+            <input id="userNumber" type="number" pattern="/[0-9]/g" required>
 
             <select name="countries" id="countries"></select>
 
@@ -26,7 +26,7 @@
         </form>
     </main>
     
-
+<div id="demo"></div>
 
 <script src="js/main.js"></script>  
 </body>
