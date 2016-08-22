@@ -17,9 +17,9 @@ var validationForm = function(){
 
     //invoke new user function
     var user = new User(name, number);
-    console.log(user);        
-    console.log(user.name);
-    console.log(user.number);
+    // console.log(user);        
+    // console.log(user.name);
+    // console.log(user.number);
 
     //get the code by invking another function- http req fnc
     getCode(user);
@@ -31,10 +31,25 @@ var validationForm = function(){
 //Get code function
 var getCode = function(user){
 
-    var request = new XMLHttpRequest();
-    var params = user.number;
+        var params = user.number;
+    // var params = JSON.stringify(user.number);
+        console.log("yo");
+        console.log(params);
 
+    var body = {
+        phone: params
+    };
+    console.log(body);
+
+    var sendBody = JSON.stringify(body);
+    console.log(sendBody);
+    
+
+    var request = new XMLHttpRequest();
+        
         request.open('POST', 'https://api.homeppl.com/console/login/get-code', false);
+        request.setRequestHeader("Content-type", "application/json");
+
         request.onreadystatechange = function(){
             console.log("hey");
 
@@ -42,14 +57,9 @@ var getCode = function(user){
                 console.log(request.responseText);   
             }
         }
-        request.send("0532344568");
+        request.send(sendBody);
 
-        // request.responseBody
-        // request body
-
-        console.log(request.status);
-        console.log(request.data);
-        console.log(request.msg);        
+        console.log(request.status);       
         console.log(request.statusText);
 };
 
