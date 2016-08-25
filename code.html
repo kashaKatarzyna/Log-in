@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Code</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container2">
+        <header>
+            <h1>Enter Code</h1>
+        </header>
+
+        <form id="enterCode">
+            <label for="code">Enter Code here</label>
+            <input id="code" type="text" pattern="[a-zA-Z0-9-]+" required>
+
+            <input type="submit" value="Enter" onclick="access()" required>
+            <a href="index.html">Go Back</a>
+        </form>
+    </div>
+    
+    <script src="js/main.js"></script>    
+    <script src="js/code.js"></script>
+</body>
+</html>
